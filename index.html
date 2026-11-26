@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>abyss ✝ pastel ghost</title>
+<meta name="description" content="a violet dream. touch the needle.">
+<meta name="theme-color" content="#05030a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23120a1f'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23382a52' stroke-width='.6'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%238d5cf6'/%3E%3Ccircle cx='16' cy='16' r='1.4' fill='%23000'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ the altar: turntable, roses, kitten ============ -->
+<main id="altar">
+  <canvas class="roses" id="roses-left" aria-hidden="true"></canvas>
+  <canvas class="roses" id="roses-right" aria-hidden="true"></canvas>
+  <canvas id="dust" aria-hidden="true"></canvas>
+
+  <div class="corner corner-tl">✝ abyss</div>
+  <div class="corner corner-tr" id="clock">33⅓</div>
+
+  <section class="stage">
+    <div class="deck-wrap" id="deckWrap">
+      <div class="deck-glow" id="deckGlow"></div>
+      <!-- the turntable svg is built by js/player.js -->
+      <div id="deck"></div>
+      <canvas id="kitten" aria-label="a small black kitten" role="img"></canvas>
+      <p class="whisper" id="hint">touch the needle</p>
+    </div>
+
+    <aside class="side">
+      <h1 class="album">Abyss</h1>
+      <h2 class="artist">pastel ghost</h2>
+      <ol id="tracks" class="tracks"></ol>
+
+      <div class="timeline" id="timeline">
+        <div class="times"><span id="tCur">0:00</span><span id="tDur">--:--</span></div>
+        <div class="bar" id="bar">
+          <div class="bar-fill" id="barFill"></div>
+          <div class="bar-knob" id="barKnob"></div>
+        </div>
+        <p class="now" id="now">the record is silent</p>
+      </div>
+    </aside>
+  </section>
+
+  <div class="drift-wrap">
+    <button id="drift" class="drift" type="button">
+      <span class="drift-orn">☾</span>
+      <span class="drift-text">Drift into dreams</span>
+      <span class="drift-orn">☽</span>
+    </button>
+  </div>
+
+  <p class="loader-note" id="loaderNote" hidden>
+    <span>the record is blank.</span>
+    <span>place the album in <em>/music</em> or</span>
+    <label class="load-btn">drop it here<input type="file" id="fileInput" accept="audio/*" multiple hidden></label>
+  </p>
+</main>
+
+<!-- ============ the dream: scroll-driven field ============ -->
+<section id="dream" aria-hidden="true">
+  <canvas id="field"></canvas>
+  <div id="words" class="words"></div>
+  <div id="intro" class="intro"></div>
+
+  <div id="dreamScroll" class="dream-scroll" tabindex="-1">
+    <div id="dreamTrack" class="dream-track"></div>
+  </div>
+
+  <div class="hud">
+    <div class="hud-tl">✝ abyss</div>
+    <div class="hud-tr">
+      <span id="hudSong" class="hud-song"></span>
+      <button id="wake" class="wake" type="button">wake up</button>
+    </div>
+    <div class="hud-bl" id="hudZone">the cosmos field · 000.0 m</div>
+    <div class="hud-br" id="hudTime">here for 00:00:00</div>
+  </div>
+
+  <div id="ending" class="ending">
+    <p>stay a while.</p>
+    <button id="wake2" class="wake big" type="button">or wake up</button>
+  </div>
+
+  <p id="glNote" class="gl-note" hidden>this dream needs WebGL2 to open.</p>
+</section>
+
+<!-- overlays -->
+<div id="grain" aria-hidden="true"></div>
+<div id="scan" aria-hidden="true"></div>
+<div id="veil" aria-hidden="true"></div>
+
+<script src="music/playlist.js"></script>
+<script src="js/ascii.js"></script>
+<script src="js/player.js"></script>
+<script src="js/field-gl.js"></script>
+<script src="js/field-shaders.js"></script>
+<script src="js/field-tex.js"></script>
+<script src="js/cat-real.js"></script>
+<script src="js/field.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

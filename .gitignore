@@ -1,0 +1,14 @@
+# system junk
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# the album stays on this computer only (copyrighted music)
+music/*.mp3
+music/*.m4a
+music/*.wav
+music/*.flac
+music/*.ogg
+
+# local tool settings
+.claude/
